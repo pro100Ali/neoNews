@@ -32,7 +32,29 @@ class APICaller {
                 }
             }
     }
-    
+
+    func signIn(email: String, name: String) {
+        let urlString = "http://muha-backender.org.kg/login/"
+        
+        let user = User(email: email, first_name: name)
+        
+        AF.request(urlString, method: .post, parameters: user, encoder: JSONParameterEncoder.default, headers: ["Accept": "application/json", "Content-Type": "application/json"])
+            .validate(statusCode: 200 ..< 600)
+            .response { response in
+                print(response.result)
+                switch response.result {
+                case .success(let data):
+                    if let responseData = data {
+                        debugPrint(String(data: responseData, encoding: .utf8))
+                    }
+                case .failure(let error):
+                    print("Request failed. Error: \(error)")
+                }
+            }
+    }
+
+
+
     func confirmCode(code: String, completion: @escaping (Result<ConfirmationUser, Error>) -> Void) {
         
         let urlString = "http://muha-backender.org.kg/confirm-code/"
@@ -55,30 +77,34 @@ class APICaller {
             }
     }
     
-    func    setPassword(accesstoken: String, password: String, password2: String, completion: @escaping (Result<ConfirmationUser, Error>) -> Void) {
-        
+    func setPassword(accessToken: String, password: String, password2: String, completion: @escaping (Result<String, Error>) -> Void) {
         let urlString = "http://muha-backender.org.kg/set-password/"
+        
+        print("access token is \(accessToken)")
+        
+        let accesstTokenDemo = "Bearer \(accessToken)"
         
         let parameters: [String: String] = [
             "password1": password,
             "password2": password2
         ]
-        let accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyNjA2NzAxLCJpYXQiOjE2OTI1MjAzMDEsImp0aSI6ImJlNzZiZTUyYTJkODRhOTZiYmY3MGE4ZTE0OWUxYjZjIiwidXNlcl9pZCI6NH0.xJ7Y9SZeulDrTglOIo8yZf0B0vDKG08aIs-a0RicuO0"
         
-        
-        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["Accept": "application/json", "Content-Type": "application/json", "Authorization": "Bearer \(accessToken)"])
-            .validate(statusCode: 200 ..< 600)
-            .responseDecodable(of: ConfirmationUser.self) { response in
-                print(response.debugDescription)
-
+        AF.request(urlString, method: .put, parameters: parameters, encoder: JSONParameterEncoder.default, headers: ["Accept": "application/json", "Content-Type": "application/json", "Authorization": accesstTokenDemo])
+            .validate()
+            .responseDecodable(of: Message.self) { response in
                 switch response.result {
                 case .success(let data):
-                    completion(.success(data))
+                    completion(.success(data.message))
                 case .failure(let error):
                     completion(.failure(error))
                 }
             }
-    }}
+    }
+}
 
 
+
+struct Message: Codable {
+    var message: String
+}
 

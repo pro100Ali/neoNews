@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  SignInViewController.swift
 //  neoNews
 //
-//  Created by Али  on 20.08.2023.
+//  Created by Али  on 22.08.2023.
 //
 
 import UIKit
 import SnapKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: UIViewController, UITextFieldDelegate {
 
     var viewModel = LoginViewModel()
     
@@ -40,8 +40,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
 
     @objc func signUp() {
-        viewModel.signUp(email: nameField.text!, name: passwordField.text!)
-        let vc = ConfirmationViewController()
+        viewModel.signIn(email: nameField.text!, name: passwordField.text!)
+        let vc = NewsVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

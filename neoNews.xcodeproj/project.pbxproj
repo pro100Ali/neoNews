@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412735992A93DFD300D00268 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412735982A93DFD300D00268 /* SignInViewController.swift */; };
+		4127359B2A93E00A00D00268 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4127359A2A93E00A00D00268 /* NewsVC.swift */; };
 		413FBB232A9153B600061A18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FBB222A9153B600061A18 /* AppDelegate.swift */; };
 		413FBB252A9153B600061A18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FBB242A9153B600061A18 /* SceneDelegate.swift */; };
 		413FBB272A9153B600061A18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413FBB262A9153B600061A18 /* ViewController.swift */; };
@@ -22,9 +24,15 @@
 		41496DC22A9261F700AAEF1F /* Responce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41496DC12A9261F700AAEF1F /* Responce.swift */; };
 		41496DC42A92814300AAEF1F /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41496DC32A92814300AAEF1F /* ConfirmationViewController.swift */; };
 		41496DC62A928CCF00AAEF1F /* SetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41496DC52A928CCF00AAEF1F /* SetPasswordVC.swift */; };
+		41BE3BB22A968ADC002EDD48 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE3BB12A968ADC002EDD48 /* News.swift */; };
+		41BE3BB42A968BB3002EDD48 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE3BB32A968BB3002EDD48 /* NewsCell.swift */; };
+		41BE3BB72A968C70002EDD48 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 41BE3BB62A968C70002EDD48 /* Kingfisher */; };
+		41BE3BBA2A968CD1002EDD48 /* NewsDescriptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BE3BB92A968CD1002EDD48 /* NewsDescriptionVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		412735982A93DFD300D00268 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4127359A2A93E00A00D00268 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		413FBB1F2A9153B600061A18 /* neoNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neoNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		413FBB222A9153B600061A18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		413FBB242A9153B600061A18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +48,9 @@
 		41496DC12A9261F700AAEF1F /* Responce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responce.swift; sourceTree = "<group>"; };
 		41496DC32A92814300AAEF1F /* ConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
 		41496DC52A928CCF00AAEF1F /* SetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPasswordVC.swift; sourceTree = "<group>"; };
+		41BE3BB12A968ADC002EDD48 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		41BE3BB32A968BB3002EDD48 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		41BE3BB92A968CD1002EDD48 /* NewsDescriptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDescriptionVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BE3BB72A968C70002EDD48 /* Kingfisher in Frameworks */,
 				413FBB522A915E9600061A18 /* SnapKit in Frameworks */,
 				41496DBA2A92143C00AAEF1F /* Alamofire in Frameworks */,
 			);
@@ -76,13 +88,12 @@
 			children = (
 				413FBB222A9153B600061A18 /* AppDelegate.swift */,
 				413FBB242A9153B600061A18 /* SceneDelegate.swift */,
-				413FBB262A9153B600061A18 /* ViewController.swift */,
-				413FBB532A916ADA00061A18 /* LoginViewController.swift */,
-				41496DC52A928CCF00AAEF1F /* SetPasswordVC.swift */,
-				41496DC32A92814300AAEF1F /* ConfirmationViewController.swift */,
-				41496DBB2A9219A100AAEF1F /* APICaller.swift */,
-				41496DBF2A925E6000AAEF1F /* LoginViewModel.swift */,
+				41BE3BB82A968CAF002EDD48 /* NewsDescription */,
+				41BE3BB02A968ABF002EDD48 /* NewsScreen */,
 				41496DC12A9261F700AAEF1F /* Responce.swift */,
+				41BE3BAD2A961CD0002EDD48 /* Controllers */,
+				41BE3BAF2A961CFA002EDD48 /* Manager */,
+				41BE3BAE2A961CE8002EDD48 /* ViewModel */,
 				413FBB2B2A9153B800061A18 /* Assets.xcassets */,
 				41496DBD2A92552200AAEF1F /* User.swift */,
 				41496DB62A91FAE400AAEF1F /* CustomButton.swift */,
@@ -90,6 +101,52 @@
 				413FBB302A9153B800061A18 /* Info.plist */,
 			);
 			path = neoNews;
+			sourceTree = "<group>";
+		};
+		41BE3BAD2A961CD0002EDD48 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				413FBB262A9153B600061A18 /* ViewController.swift */,
+				413FBB532A916ADA00061A18 /* LoginViewController.swift */,
+				412735982A93DFD300D00268 /* SignInViewController.swift */,
+				41496DC52A928CCF00AAEF1F /* SetPasswordVC.swift */,
+				41496DC32A92814300AAEF1F /* ConfirmationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		41BE3BAE2A961CE8002EDD48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41496DBF2A925E6000AAEF1F /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		41BE3BAF2A961CFA002EDD48 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				41496DBB2A9219A100AAEF1F /* APICaller.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		41BE3BB02A968ABF002EDD48 /* NewsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4127359A2A93E00A00D00268 /* NewsVC.swift */,
+				41BE3BB12A968ADC002EDD48 /* News.swift */,
+				41BE3BB32A968BB3002EDD48 /* NewsCell.swift */,
+			);
+			path = NewsScreen;
+			sourceTree = "<group>";
+		};
+		41BE3BB82A968CAF002EDD48 /* NewsDescription */ = {
+			isa = PBXGroup;
+			children = (
+				41BE3BB92A968CD1002EDD48 /* NewsDescriptionVC.swift */,
+			);
+			path = NewsDescription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +168,7 @@
 			packageProductDependencies = (
 				413FBB512A915E9600061A18 /* SnapKit */,
 				41496DB92A92143C00AAEF1F /* Alamofire */,
+				41BE3BB62A968C70002EDD48 /* Kingfisher */,
 			);
 			productName = neoNews;
 			productReference = 413FBB1F2A9153B600061A18 /* neoNews.app */;
@@ -143,6 +201,7 @@
 			packageReferences = (
 				413FBB502A915E9600061A18 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				41496DB82A92143C00AAEF1F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				41BE3BB52A968C70002EDD48 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 413FBB202A9153B600061A18 /* Products */;
 			projectDirPath = "";
@@ -174,10 +233,15 @@
 				41496DBC2A9219A100AAEF1F /* APICaller.swift in Sources */,
 				413FBB272A9153B600061A18 /* ViewController.swift in Sources */,
 				41496DC62A928CCF00AAEF1F /* SetPasswordVC.swift in Sources */,
+				41BE3BB42A968BB3002EDD48 /* NewsCell.swift in Sources */,
+				41BE3BB22A968ADC002EDD48 /* News.swift in Sources */,
 				413FBB232A9153B600061A18 /* AppDelegate.swift in Sources */,
 				41496DC42A92814300AAEF1F /* ConfirmationViewController.swift in Sources */,
 				413FBB252A9153B600061A18 /* SceneDelegate.swift in Sources */,
+				4127359B2A93E00A00D00268 /* NewsVC.swift in Sources */,
 				41496DB72A91FAE400AAEF1F /* CustomButton.swift in Sources */,
+				412735992A93DFD300D00268 /* SignInViewController.swift in Sources */,
+				41BE3BBA2A968CD1002EDD48 /* NewsDescriptionVC.swift in Sources */,
 				41496DBE2A92552200AAEF1F /* User.swift in Sources */,
 				41496DC02A925E6000AAEF1F /* LoginViewModel.swift in Sources */,
 				41496DC22A9261F700AAEF1F /* Responce.swift in Sources */,
@@ -406,6 +470,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		41BE3BB52A968C70002EDD48 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -418,6 +490,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 41496DB82A92143C00AAEF1F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		41BE3BB62A968C70002EDD48 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 41BE3BB52A968C70002EDD48 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -16,7 +16,7 @@ class LoginViewModel: NSObject {
 //               self.bindViewModelToController()
 //           }
 //       }
-    private(set) var accessToken = ""
+    private(set) var accessToken: String?
     
     
 //    var bindViewModelToController: (() -> ()) = {}
@@ -30,6 +30,10 @@ class LoginViewModel: NSObject {
 
     func signUp(email: String, name: String) {
         self.alamofireCaller.signUp(email: email, name: name)
+    }
+    
+    func signIn(email: String, name: String) {
+        self.alamofireCaller.signIn(email: email, name: name)
     }
     
     func confirmCode(code: String) {
@@ -52,15 +56,13 @@ class LoginViewModel: NSObject {
     }
     
     func setPassword(accesstoken: String, password: String, password2: String) {
-        APICaller.shared.setPassword(accesstoken: accesstoken, password: password, password2: password2) { res in
-            
+        APICaller.shared.setPassword(accessToken: accesstoken, password: password, password2: password2) { res in
             switch res {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
+            case .success(let success):
+                print(success)
+            case .failure(let failure):
+                print(failure)
             }
-            
         }
     }
 }

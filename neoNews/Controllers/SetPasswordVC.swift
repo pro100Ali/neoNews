@@ -14,14 +14,14 @@ class SetPasswordVC: UIViewController, UITextFieldDelegate {
     
     lazy private var nameField: UITextField = {
        let tx = UITextField()
-        tx.placeholder = "Почта"
+        tx.placeholder = "Password"
         return tx
     }()
     
     
     lazy private var passwordField: UITextField = {
        let tx = UITextField()
-        tx.placeholder = "Пароль"
+        tx.placeholder = "Verify password"
         return tx
     }()
     
@@ -41,8 +41,14 @@ class SetPasswordVC: UIViewController, UITextFieldDelegate {
     
 
     @objc func setPassword() {
-        
-        viewModel.setPassword(accesstoken: viewModel.accessToken ,password: nameField.text!, password2: nameField.text!)
+        print(viewModel.accessToken)
+
+        if let accessToken = viewModel.accessToken {
+            viewModel.setPassword(accesstoken: accessToken ,password: nameField.text!, password2: nameField.text!)
+            let vc = SignInViewController()
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         print("Finished")
     }

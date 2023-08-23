@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     lazy private var button2: UIButton = {
         let button = UIButton()
         button.setTitle("Есть профиль? Войти", for: .normal)
+        button.addTarget(self, action: #selector(navigateToSignIn), for: .touchUpInside)
+
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return button
     }()
@@ -55,6 +57,11 @@ class ViewController: UIViewController {
     
     @objc func navigateTo() {
         let vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func navigateToSignIn() {
+        let vc = SignInViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

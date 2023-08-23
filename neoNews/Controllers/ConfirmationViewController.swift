@@ -36,10 +36,14 @@ class ConfirmationViewController: UIViewController, UITextFieldDelegate {
             switch res {
             case .success(let data):
                 self.user = data
-                self.viewModel.configureToken(accessToken: self.user!.access)
-                let vc = SetPasswordVC()
-                
-                self.navigationController?.pushViewController(vc, animated: true)
+                if let token = self.user?.access {
+                    
+                    let vc = SetPasswordVC()
+                    vc.viewModel.configureToken(accessToken: token)
+
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+
                 
             case .failure(let error):
                 print(error)
