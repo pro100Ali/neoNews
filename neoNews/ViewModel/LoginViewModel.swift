@@ -11,15 +11,9 @@ class LoginViewModel: NSObject {
     
     private var alamofireCaller: APICaller!
 
-//    private(set) var empData : [User]! {
-//           didSet {
-//               self.bindViewModelToController()
-//           }
-//       }
     private(set) var accessToken: String?
     
     
-//    var bindViewModelToController: (() -> ()) = {}
     
     override init() {
         super.init()

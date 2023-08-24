@@ -59,8 +59,8 @@ class ConfirmationViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-           textField.resignFirstResponder() // Hide the keyboard
-           navigateToSetPassword() // Call your custom action method
+           textField.resignFirstResponder()
+           navigateToSetPassword() 
            return true
        }
     

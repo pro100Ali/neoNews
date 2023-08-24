@@ -41,7 +41,6 @@ class SetPasswordVC: UIViewController, UITextFieldDelegate {
     
 
     @objc func setPassword() {
-        print(viewModel.accessToken)
 
         if let accessToken = viewModel.accessToken {
             viewModel.setPassword(accesstoken: accessToken ,password: nameField.text!, password2: nameField.text!)

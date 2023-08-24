@@ -80,7 +80,6 @@ class APICaller {
     func setPassword(accessToken: String, password: String, password2: String, completion: @escaping (Result<String, Error>) -> Void) {
         let urlString = "http://muha-backender.org.kg/set-password/"
         
-        print("access token is \(accessToken)")
         
         let accesstTokenDemo = "Bearer \(accessToken)"
         
